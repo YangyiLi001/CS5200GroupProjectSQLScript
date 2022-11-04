@@ -41,29 +41,29 @@ INSERT INTO Account VALUES ('advisor205@gmail.com','P@ssWord205');
 INSERT INTO Account VALUES ('advisor206@gmail.com','P@ssWord206');
 -- TODO: update semster ID, advisorID if necessary
 
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1001, 'Joseph','student1001@gmail.com','P@ssWord1001',3.45, "Fall 2022", 201);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1002, 'Thomas','student1002@gmail.com','P@ssWord1002',3.10,"Fall 2022", 201);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1003, 'Charles','student1003@gmail.com','P@ssWord1003', 3.30,"Fall 2022", 202);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1004, 'Jessica','student1004@gmail.com','P@ssWord1004', 3.90,"Fall 2022", 202);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1005, 'Susan','student1005@gmail.com','P@ssWord1005', 3.25,"Fall 2022", 203);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1006, 'Barbara','student1006@gmail.com','P@ssWord1006',3.10,"Spring 2022", 204);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1007, 'Elizabeth','student1007@gmail.com','P@ssWord1007', 3.80,"Spring 2022", 205);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1008, 'Daniel','student1008@gmail.com','P@ssWord1008',3.45, "Spring 2022", 205);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1009, 'Matthew','student1009@gmail.com','P@ssWord1009',3.10,"Fall 2022", 205);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1010, 'Anthony','student1010@gmail.com','P@ssWord1010', 3.30,"Fall 2021", 206);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1011, 'Karen','student1011@gmail.com','P@ssWord1011', 3.90,"Fall 2022", 207);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1012, 'Mark','student1012@gmail.com','P@ssWord1012', 3.25,"Fall 2022", 207);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1013, 'Betty','student1013@gmail.com','P@ssWord1013',3.10,"Fall 2021", 208);
-INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1014, 'Margaret','student1014@gmail.com','P@ssWord11014', 3.80,"Fall 2022", 208);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1001, 'Joseph','student1001@gmail.com', 3.45, "Fall 2022", 201);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1002, 'Thomas','student1002@gmail.com', 3.10,"Fall 2022", 201);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1003, 'Charles','student1003@gmail.com', 3.30,"Fall 2022", 202);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1004, 'Jessica','student1004@gmail.com', 3.90,"Fall 2022", 202);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1005, 'Susan','student1005@gmail.com', 3.25,"Fall 2022", 203);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1006, 'Barbara','student1006@gmail.com', 3.10,"Spring 2022", 204);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1007, 'Elizabeth','student1007@gmail.com', 3.80,"Spring 2022", 205);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1008, 'Daniel','student1008@gmail.com', 3.45, "Spring 2022", 205);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1009, 'Matthew','student1009@gmail.com', 3.10,"Fall 2022", 205);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1010, 'Anthony','student1010@gmail.com', 3.30,"Fall 2021", 206);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1011, 'Karen','student1011@gmail.com', 3.90,"Fall 2022", 201);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1012, 'Mark','student1012@gmail.com', 3.25,"Fall 2022", 202);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1013, 'Betty','student1013@gmail.com', 3.10,"Fall 2021", 203);
+INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1014, 'Margaret','student1014@gmail.com',' 3.80,"Fall 2022", 203);
 
 
-INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (301, 'Lee','instructor301@test.com','P@ssWord301',501);
-INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (302, 'Steven','instructor302@test.com','P@ssWord302',501);
-INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (303, 'Paul','instructor303@test.com','P@ssWord303',501);
-INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (304, 'Kimberly','instructor304@test.com','P@ssWord304',502);
-INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (305, 'Emily','instructor305@test.com','P@ssWord305',502);
-INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (306, 'Donna','instructor306@test.com','P@ssWord306',503);
-INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (307, 'Carol','instructor307@test.com','P@ssWord307',503);
+INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (301, 'Lee','instructor301@test.com', 501);
+INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (302, 'Steven','instructor302@test.com', 501);
+INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (303, 'Paul','instructor303@test.com', 501);
+INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (304, 'Kimberly','instructor304@test.com', 502);
+INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (305, 'Emily','instructor305@test.com', 502);
+INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (306, 'Donna','instructor306@test.com', 503);
+INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (307, 'Carol','instructor307@test.com', 503);
 
 --Vaishali's Part
 
@@ -211,5 +211,3 @@ INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5005);
 INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5006);
 INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5007);
 INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5008);
-
-
