@@ -1,16 +1,40 @@
-CREATE TABLE Admin  (
-    Admin_id  int(8) NOT NULL,
-    Name     VARCHAR(20),
-    Email_id    VARCHAR(20),
-    PRIMARY KEY  (Admin_iD),
-    FOREIGN KEY(Email_id ) REFERENCES Account(Email_id ));
-   
-
 CREATE TABLE Account  (
     Email_id    VARCHAR(20) NOT NULL,
     Password   VARCHAR(20),
     PRIMARY KEY (Email_id)
     );
+
+
+CREATE TABLE Admin  (
+    Admin_id  int(8) NOT NULL,
+    Name     VARCHAR(20),
+    Email_id    VARCHAR(20),
+    PRIMARY KEY  (Admin_iD),
+    FOREIGN KEY(Email_id ) REFERENCES Account(Email_id )
+);
+
+Create table Advisor (
+        Advisor_id int(8) NOT NULL,
+        Email_id VARCHAR(50),
+        Name VARCHAR(50),
+        Department_id int(8),
+        PRIMARY KEY (Advisor_id),
+        FOREIGN KEY(Email_id) REFERENCES Account(Email_id),
+--         FOREIGN KEY(Department_id) REFERENCES Department(Department_id)
+);
+
+CREATE TABLE Department(
+    Department_id     INT(8),
+    Name        VARCHAR(20),
+    Advisor_id      VARCHAR(20),
+    PRIMARY KEY(Department_id)
+    FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id)
+ );
+ 
+ALTER TABLE Advisor
+ADD FOREIGN KEY (Department_id)
+REFERENCES Department(Department_id);
+
 
 CREATE TABLE Students  (
     Student_id int(8) NOT NULL,
@@ -24,6 +48,10 @@ CREATE TABLE Students  (
     FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id)
 --     FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name)
 );
+
+ALTER TABLE Students
+ADD FOREIGN KEY (Semester_name)
+REFERENCES Semester(Semester_name);
 
 
 CREATE TABLE Instructors  (
@@ -136,13 +164,13 @@ CREATE TABLE Section
 CREATE TABLE Message
 (
     Message_id      int(8),
-    Message_body    clob,
+    Message_body    VARCHAR(100),
     Read_flag      BIT(1),
-    Advisor_id		VARCHAR(9),
+    Advisor_id		int(8),
     Student_id 		int(8),
     PRIMARY KEY (Message_id),
-    FOREIGN KEY(Advisor_id) REFERENCES Advisors(Advisor_id),
---     FOREIGN KEY(Student_id) REFERENCES Students(Student_id)
+    FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id),
+    FOREIGN KEY(Student_id) REFERENCES Students(Student_id)
 );
 
 CREATE TABLE Occupancy
@@ -157,6 +185,7 @@ CREATE TABLE Occupancy
     FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id),
     CONSTRAINT Occupancy_pk PRIMARY KEY (Course_id, Classroom_id)
 );
+
 -- TODO: ADDING trigger
 -- Trigger
 -- update advisorID for student if an old advisor droped
