@@ -33,6 +33,12 @@ INSERT INTO Account VALUES ('instructor304@test.com','P@ssWord304');
 INSERT INTO Account VALUES ('instructor305@test.com','P@ssWord305');
 INSERT INTO Account VALUES ('instructor306@test.com','P@ssWord306');
 INSERT INTO Account VALUES ('instructor307@test.com','P@ssWord307');
+INSERT INTO Account VALUES ('advisor201@gmail.com','P@ssWord201');
+INSERT INTO Account VALUES ('advisor202@gmail.com','P@ssWord202');
+INSERT INTO Account VALUES ('advisor203@gmail.com','P@ssWord203');
+INSERT INTO Account VALUES ('advisor204@gmail.com','P@ssWord204');
+INSERT INTO Account VALUES ('advisor205@gmail.com','P@ssWord205');
+INSERT INTO Account VALUES ('advisor206@gmail.com','P@ssWord206');
 -- TODO: update semster ID, advisorID if necessary
 
 INSERT INTO Students (Student_id, Name ,Email_id, CGPA, Semester_name, Advisor_id) VALUES (1001, 'Joseph','student1001@gmail.com','P@ssWord1001',3.45, "Fall 2022", 201);
@@ -61,19 +67,19 @@ INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (3
 
 --Vaishali's Part
 
-insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_1', '00000001', 'P@ssWord', 'Advisor1', 'Dept_1');
-insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_2', '00000002', 'P@ssWord', 'Advisor2', 'Dept_2');
-insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_3', '00000003', 'P@ssWord', 'Advisor3', 'Dept_3');
-insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_4', '00000004', 'P@ssWord', 'Advisor4', 'Dept_4');
-insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_5', '00000005', 'P@ssWord', 'Advisor5', 'Dept_5');
-insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_6', '00000006', 'P@ssWord', 'Advisor6', 'Dept_6');
+insert into Advisor (AdvisorID, Email_id, Name, Department_id) values ('201', 'advisor201@gmail.com', 'Anna', '601');
+insert into Advisor (AdvisorID, Email_id, Name, Department_id) values ('202', 'advisor202@gmail.com', 'Chung', '601');
+insert into Advisor (AdvisorID, Email_id, Name, Department_id) values ('203', 'advisor203@gmail.com', 'Megan', '601');
+insert into Advisor (AdvisorID, Email_id, Name, Department_id) values ('204', 'advisor204@gmail.com', 'Drew', '602');
+insert into Advisor (AdvisorID, Email_id, Name, Department_id) values ('205', 'advisor205@gmail.com', 'Carl', '602');
+insert into Advisor (AdvisorID, Email_id, Name, Department_id) values ('206', 'advisor206@gmail.com', 'Jasson', '603');
 
 
-insert into Classroom (ClassroomID, Location, Capacity) values ('Class_1', 'location1', 50);
-insert into Classroom (ClassroomID, Location, Capacity) values ('Class_2', 'location2', 50);
-insert into Classroom (ClassroomID, Location, Capacity) values ('Class_3', 'location3', 50);
-insert into Classroom (ClassroomID, Location, Capacity) values ('Class_4', 'location4', 50);
-insert into Classroom (ClassroomID, Location, Capacity) values ('Class_5', 'location5', 50);
+insert into Classroom (Classroom_id, Location, Capacity) values ('1101', 'location1', 50);
+insert into Classroom (Classroom_id, Location, Capacity) values ('1102', 'location2', 40);
+insert into Classroom (Classroom_id, Location, Capacity) values ('1103', 'location3', 30);
+insert into Classroom (Classroom_id, Location, Capacity) values ('1104', 'location4', 60);
+insert into Classroom (Classroom_id, Location, Capacity) values ('1105', 'location5', 50);
 
 insert into StudentCourse (StudentID, CourseID, WaitList) values ('1001', 5001, false);
 insert into StudentCourse (StudentID, CourseID, WaitList) values ('1001', 5002, false);
@@ -105,7 +111,7 @@ insert into StudentCourse (StudentID, CourseID, WaitList) values ('1013', 5004, 
 insert into StudentCourse (StudentID, CourseID, WaitList) values ('1014', 5003, false);
 insert into StudentCourse (StudentID, CourseID, WaitList) values ('1014', 5005, false);
 
-insert into Course values (5001, 'Course1', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
+insert into Course (Course_id, Name, Online_flag, Capacity, Credits, Prerequisite_course_id, Semester_name, Department_id) values (5001, 'Course1', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
 insert into Course values (5002, 'Course2', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
 insert into Course values (5003, 'Course3', 'ON', 20, 4, null, 'SEM1', 'Dept2' );
 insert into Course values (5004, 'Course4', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
