@@ -37,6 +37,40 @@ INSERT INTO Instructors VALUES (305, 'Emily','30000005','P@ssWord',502);
 INSERT INTO Instructors VALUES (306, 'Donna','30000006','P@ssWord',503);
 INSERT INTO Instructors VALUES (307, 'Carol','30000007','P@ssWord',503);
 
+--Vaishali's Part
+
+insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_1', '00000001', 'P@ssWord', 'Advisor1', 'Dept_1');
+insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_2', '00000002', 'P@ssWord', 'Advisor2', 'Dept_2');
+insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_3', '00000003', 'P@ssWord', 'Advisor3', 'Dept_3');
+insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_4', '00000004', 'P@ssWord', 'Advisor4', 'Dept_4');
+insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_5', '00000005', 'P@ssWord', 'Advisor5', 'Dept_5');
+insert into Advisor (AdvisorID, UserID, Password, Name, DepartmentID) values ('Ad_6', '00000006', 'P@ssWord', 'Advisor6', 'Dept_6');
+
+
+insert into Classroom (ClassroomID, Location, Capacity) values ('Class_1', 'location1', 50);
+insert into Classroom (ClassroomID, Location, Capacity) values ('Class_2', 'location2', 50);
+insert into Classroom (ClassroomID, Location, Capacity) values ('Class_3', 'location3', 50);
+insert into Classroom (ClassroomID, Location, Capacity) values ('Class_4', 'location4', 50);
+insert into Classroom (ClassroomID, Location, Capacity) values ('Class_5', 'location5', 50);
+
+insert into StudentCourse (StudentID, CourseID, WaitList) values ('100001', 5001, false);
+insert into StudentCourse (StudentID, CourseID, WaitList) values ('100002', 5001, false);
+insert into StudentCourse (StudentID, CourseID, WaitList) values ('100003', 5001, false);
+insert into StudentCourse (StudentID, CourseID, WaitList) values ('100001', 5002, true);
+insert into StudentCourse (StudentID, CourseID, WaitList) values ('100002', 5002, true);
+
+insert into Course values (5001, 'Course1', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
+insert into Course values (5002, 'Course2', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
+insert into Course values (5003, 'Course3', 'ON', 20, 4, null, 'SEM1', 'Dept2' );
+insert into Course values (5004, 'Course4', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
+insert into Course values (5005, 'Course5', 'ON', 20, 4, null, 'SEM1', 'Dept3' );
+insert into Course values (5006, 'Course6', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
+
+insert into DepartmentCourse values ('Dept1', 5001);
+insert into DepartmentCourse values ('Dept1', 5002);
+insert into DepartmentCourse values ('Dept2', 5003);
+insert into DepartmentCourse values ('Dept2', 5004);
+
 
 INSERT INTO InstructorCourse VALUES ('30000001',5001);
 INSERT INTO InstructorCourse VALUES ('30000002',5002);
