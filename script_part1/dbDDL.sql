@@ -1,152 +1,162 @@
 CREATE TABLE Admin  (
-    AdminID  int(3),
-    Name     VARCHAR(25),
-    UserId    VARCHAR(8),
-    Password   VARCHAR(8),
-    PRIMARY KEY (AdminID),
-    FOREIGN KEY(UserId) REFERENCES Account(UserId));
-
+    Admin_id  int(8) NOT NULL,
+    Name     VARCHAR(20),
+    Email_id    VARCHAR(20),
+    PRIMARY KEY  (Admin_iD),
+    FOREIGN KEY(Email_id ) REFERENCES Account(Email_id ));
+   
 
 CREATE TABLE Account  (
-    UserId    VARCHAR(8),
-    Password   VARCHAR(8),
-    PRIMARY KEY (UserId),
-    )
+    Email_id    VARCHAR(20) NOT NULL,
+    Password   VARCHAR(20),
+    PRIMARY KEY (Email_id)
+    );
 
 CREATE TABLE Students  (
-    StudentID int(6),
-    Name     VARCHAR(8),
-    UserId    VARCHAR(8),
-    Password   VARCHAR(8),
+    Student_id int(8) NOT NULL,
+    Name     VARCHAR(20) NOT NULL,
+    Email_id    VARCHAR(20) NOT NULL,
     CGPA     DECIMAL(6,3),
---     TODO: CONSIDERING DECOMPOSE Senester ID to semester and year if necessary
-    SemesterID VARCHAR(10),
-    AdvisorID VARCHAR(8),
-    PRIMARY KEY (StudentID),
-    FOREIGN KEY(UserId) REFERENCES Account(UserId),
-    FOREIGN KEY(AdvisorID) REFERENCES Advisor(AdvisorID),
-)
+    Semester_name VARCHAR(20),
+    Advisor_id int(8),
+    PRIMARY KEY (Student_id),
+    FOREIGN KEY(Email_id ) REFERENCES Account(Email_id),
+    FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id)
+--     FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name)
+);
 
 
 CREATE TABLE Instructors  (
-    InstructorID int(3),
-    Name     VARCHAR(8),
-    UserId    VARCHAR(8),
-    Password   VARCHAR(8),
-    DepartmentID int(3),
-    PRIMARY KEY (InstructorID),
-    FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID)
-)
+    Instructor_id int(8),
+    Name     VARCHAR(20),
+    Email_id    VARCHAR(20),
+    Department_id int(8),
+    PRIMARY KEY (Instructor_id),
+    FOREIGN KEY(Department_id) REFERENCES Department(Department_id),
+    FOREIGN KEY(Email_id ) REFERENCES Account(Email_id)
+);
 
 
 CREATE TABLE InstructorCourse  (
-      InstructorID      VARCHAR(8),
-      CourseID     int(4),
-      PRIMARY KEY(InstructorID),
-      FOREIGN KEY(InstructorID) REFERENCES Instructors(InstructorID),
-      FOREIGN KEY(CourseID) REFERENCES Course(CourseID)
-)
+      Instructor_id     int(8) NOT NULL,
+      Course_id     int(8) NOT NULL,
+      CONSTRAINT IC_id PRIMARY KEY(Instructor_id, Course_id),
+      FOREIGN KEY(Instructor_id) REFERENCES Instructors(Instructor_id)
+--       FOREIGN KEY(Course_id) REFERENCES Course(Course_id)
+);
 
 -- Vaishali's Part
 Create table Advisor (
-AdvisorID VARCHAR(50) NOT NULL PRIMARY KEY,
-UserID VARCHAR(50),
-Password VARCHAR(50), # password should also be a foreign key ??
-Name VARCHAR(50),
-DepartmentID VARCHAR(50),
-FOREIGN KEY(UserID) REFERENCES Account(UserID),
-FOREIGN KEY(AdvisorID) REFERENCES Department(DepartmentID)
+        Advisor_id int(8) NOT NULL,
+        Email_id VARCHAR(50),
+        Name VARCHAR(50),
+        Department_id int(8),
+        PRIMARY KEY (Advisor_id),
+        FOREIGN KEY(Email_id) REFERENCES Account(Email_id),
+        FOREIGN KEY(Department_id) REFERENCES Department(Department_id)
 );
 
+
+
 Create table Classroom (
-ClassroomID VARCHAR(50) NOT NULL PRIMARY KEY, 
-Location VARCHAR(50),
-Capacity int);
+    Classroom_id int(8) NOT NULL , 
+    Location VARCHAR(50),
+    Capacity int(4),
+    PRIMARY KEY (Classroom_id)
+);
 
 Create table StudentCourse (
-StudentID VARCHAR(50),
-CourseID int(4),
-Waitlist BOOL,
-FOREIGN KEY(InstructorID) REFERENCES Instructor(InstructorID),
-FOREIGN KEY(CourseID) REFERENCES Course(CourseID)
+    Student_id int(8),
+    Course_id int(8),
+    Waitlist BIT(1),
+--     FOREIGN KEY(Course_id) REFERENCES Course(Course_id),
+    FOREIGN KEY(Student_id) REFERENCES Students(Student_id),
+    CONSTRAINT SC_id PRIMARY KEY (Student_id, Course_id)
 );
 
 Create table Course (
-CourseID int(4) NOT NULL PRIMARY KEY, 
-Name VARCHAR(50),
-ModeFlag VARCHAR(5),  # need to check its type
-Capacity int,
-Credits int,
-PrerequisiteCourseID int(4), # password should also be a foreign key ??
-SemesterID VARCHAR(50),
-DepartmentID VARCHAR(50),
-FOREIGN KEY(SemesterID) REFERENCES Semester(SemesterID),
-FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID)
+    Course_id int(8) NOT NULL , 
+    Name VARCHAR(20),
+    Online_flag BIT(1),
+    Capacity int(8),
+    Credits int(2),
+    Prerequisite_course_id int(8), 
+    Semester_name VARCHAR(20),
+    Department_id VARCHAR(20),
+    PRIMARY KEY (Course_id)
+--     FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name),
+--     FOREIGN KEY(Department_id) REFERENCES Department(Department_id),
+-- FOREIGN KEY(Prerequisite_course_id) REFERENCES Course(Course_id)
 );
 
 Create table DepartmentCourse (
-DepartmentID VARCHAR(50), 
-CourseID int(4),
-FOREIGN KEY(CourseID) REFERENCES Course(CourseID),
-FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
-CONSTRAINT DepartmentCourseID PRIMARY KEY (DepartmentID,CourseID));
+    Department_id VARCHAR(50), 
+    Course_id int(8),
+    FOREIGN KEY(Course_id) REFERENCES Course(Course_id),
+--     FOREIGN KEY(Department_id) REFERENCES Department(Department_id),
+    CONSTRAINT DC_id PRIMARY KEY (Department_id,Course_id)
+);
 
 
-CREATE TABLE department
-(department_id     INT(1),
-dname        VARCHAR(15),
-advisor_id      VARCHAR(9),
-PRIMARY KEY(department_id ),
-      FOREIGN KEY(advisor_id) REFERENCES Advisors(advisor_id)
-      )
+CREATE TABLE Department(
+    Department_id     INT(8),
+    Name        VARCHAR(20),
+    Advisor_id      VARCHAR(20),
+    PRIMARY KEY(Department_id)
+--     FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id)
+ );
 
-CREATE TABLE semester
-(semester_id      INT(4),
-course_id       INT(4),
-start_date date,
-end_date date
-PRIMARY KEY (department_id, course_id )
-)
+CREATE TABLE Semester(
+    Semester_name VARCHAR(20),
+    Course_id       INT(8),
+    Start_date date,
+    End_date date,
+    PRIMARY KEY (Semester_name),
+    FOREIGN KEY(Course_id) REFERENCES Course(Course_id)
+);
 
-CREATE TABLE semesterCourse
+CREATE TABLE SemesterCourse
 (
-Semester_id INT(4),
-Course_id INT(4)
-PRIMARY KEY (Semester_id, course_id )
-)
+    Semester_name VARCHAR(20),
+    Course_id int(8)
+    FOREIGN KEY(Course_id ) REFERENCES Course(Course_id),
+    FOREIGN KEY(Semester_name ) REFERENCES Semester(Semester_name),
+    CONSTRAINT SC_id PRIMARY KEY (Semester_name, Course_id)
+);
 
 
-CREATE TABLE section
+CREATE TABLE Section
 (
-section_id      INT(4),
-course_id       INT(4),
-PRIMARY KEY(section_id, course_id )
-)
+    Section_id      int(8),
+    Course_id       int(8),
+    FOREIGN KEY(Course_id) REFERENCES Course(Course_id),
+    CONSTRAINT Section_pk PRIMARY KEY(Section_id, Course_id)
+);
 
-CREATE TABLE message
+CREATE TABLE Message
 (
-message_id      INT(4),
-read_flag      Boolean,
-advisor_id		VARCHAR(9),
-student_id 		int(6)
-PRIMARY KEY (message_id)
-FOREIGN KEY(advisor_id) REFERENCES Advisors(advisor_id)
-FOREIGN KEY(student_id) REFERENCES Students(student_id)
-)
+    Message_id      int(8),
+    Message_body    clob,
+    Read_flag      BIT(1),
+    Advisor_id		VARCHAR(9),
+    Student_id 		int(8),
+    PRIMARY KEY (Message_id),
+    FOREIGN KEY(Advisor_id) REFERENCES Advisors(Advisor_id),
+--     FOREIGN KEY(Student_id) REFERENCES Students(Student_id)
+);
 
-CREATE TABLE occupancy
+CREATE TABLE Occupancy
 (
-course_id      INT(4),
-classroom_id     Boolean,
-Day_class	day,
-shift1		Boolean,
-shift2		Boolean,
-shift3		Boolean
-PRIMARY KEY (course_id, classroom_id)
-FOREIGN KEY(course_id) REFERENCES Course(course_id)
-FOREIGN KEY(classroom_id) REFERENCES Classroom(classroom_id)
-
-)
+    Course_id      int(8),
+    Classroom_id   int(8),
+    Day_week	   ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
+    Shift1	    BIT(1),
+    Shift2		BIT(1),
+    Shift3		BIT(1),
+    FOREIGN KEY(Course_id) REFERENCES Course(Course_id),
+    FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id),
+    CONSTRAINT Occupancy_pk PRIMARY KEY (Course_id, Classroom_id)
+);
 -- TODO: ADDING trigger
 -- Trigger
 -- update advisorID for student if an old advisor droped
