@@ -1,13 +1,13 @@
 CREATE TABLE Admin  (
         Admin_id  int(8) NOT NULL,
         Name     VARCHAR(20),
-        Email_id    VARCHAR(20),
+        Email_id    VARCHAR(70),
         PRIMARY KEY  (Admin_iD)
 );
 
 
 CREATE TABLE Account  (
-        Email_id    VARCHAR(20) NOT NULL,
+        Email_id    VARCHAR(70) NOT NULL,
         Password   VARCHAR(20),
         PRIMARY KEY (Email_id)
 );
@@ -15,7 +15,7 @@ CREATE TABLE Account  (
 CREATE TABLE Students  (
         Student_id int(8) NOT NULL,
         Name     VARCHAR(20) NOT NULL,
-        Email_id    VARCHAR(20) NOT NULL,
+        Email_id    VARCHAR(70) NOT NULL,
         CGPA     DECIMAL(6,3),
         Semester_name VARCHAR(20),
         Advisor_id int(8),
@@ -26,7 +26,7 @@ CREATE TABLE Students  (
 CREATE TABLE Instructors  (
         Instructor_id int(8),
         Name     VARCHAR(20),
-        Email_id    VARCHAR(20),
+        Email_id    VARCHAR(70),
         Department_id int(8),
         PRIMARY KEY (Instructor_id)
 );
@@ -41,7 +41,7 @@ CREATE TABLE InstructorCourse  (
 
 Create table Advisor (
          Advisor_id int(8) NOT NULL,
-         Email_id VARCHAR(20),
+         Email_id VARCHAR(70),
          Name VARCHAR(50),
          Department_id int(8),
          PRIMARY KEY (Advisor_id)
