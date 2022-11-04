@@ -118,7 +118,7 @@ CREATE TABLE Semester(
 CREATE TABLE SemesterCourse
 (
     Semester_name VARCHAR(20),
-    Course_id int(8)
+    Course_id int(8),
     FOREIGN KEY(Course_id ) REFERENCES Course(Course_id),
     FOREIGN KEY(Semester_name ) REFERENCES Semester(Semester_name),
     CONSTRAINT SC_id PRIMARY KEY (Semester_name, Course_id)
