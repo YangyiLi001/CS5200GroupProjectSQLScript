@@ -111,19 +111,27 @@ insert into StudentCourse (StudentID, CourseID, WaitList) values ('1013', 5004, 
 insert into StudentCourse (StudentID, CourseID, WaitList) values ('1014', 5003, false);
 insert into StudentCourse (StudentID, CourseID, WaitList) values ('1014', 5005, false);
 
-insert into Course (Course_id, Name, Online_flag, Capacity, Credits, Prerequisite_course_id, Semester_name, Department_id) values (5001, 'Course1', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
-insert into Course values (5002, 'Course2', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
-insert into Course values (5003, 'Course3', 'ON', 20, 4, null, 'SEM1', 'Dept2' );
-insert into Course values (5004, 'Course4', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
-insert into Course values (5005, 'Course5', 'ON', 20, 4, null, 'SEM1', 'Dept3' );
-insert into Course values (5006, 'Course6', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
-insert into Course values (5007, 'Course7', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
-insert into Course values (5008, 'Course8', 'ON', 20, 4, null, 'SEM1', 'Dept1' );
+insert into Course (5001, 'Algorithms', 1, 20, 4, 5002, 'Fall 2021', 501);
+insert into Course (5002, 'Java', 0, 20, 4, null, 'Fall 2022', 501);
+insert into Course (5003, 'DBMS', 0, 25, 2, 5005, 'Fall 2021', 501);
+insert into Course (5004, 'Cloud', 0, 30, 4, null, 'Fall 2022', 502);
+insert into Course (5005, 'Python', 1, 20, 2, null, 'Spring 2021', 503);
+insert into Course (5006, 'Software', 0, 40, 4, null, 'Fall 2021', 502);
+insert into Course (5007, 'AI', 1, 20, 35, 5005, 'Spring 2021', 501);
 
-insert into DepartmentCourse values ('Dept1', 5001);
-insert into DepartmentCourse values ('Dept1', 5002);
-insert into DepartmentCourse values ('Dept2', 5003);
-insert into DepartmentCourse values ('Dept2', 5004);
+insert into Department (501, 'Computer Science', 201);
+insert into Department (502, 'MIS', 202);
+insert into Department (503, 'Data Science', 203);
+insert into Department (504, 'Project Management', 204);
+
+insert into DepartmentCourse values (501, 5001);
+insert into DepartmentCourse values (502, 5002);
+insert into DepartmentCourse values (501, 5003);
+insert into DepartmentCourse values (503, 5004);
+insert into DepartmentCourse values (503, 5005);
+insert into DepartmentCourse values (504, 5006);
+insert into DepartmentCourse values (504, 5007);
+
 
 
 INSERT INTO InstructorCourse (Instructor_id, Course_id) VALUES ('301',5001);
