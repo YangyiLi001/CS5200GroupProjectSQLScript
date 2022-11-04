@@ -1,4 +1,4 @@
-INSERT INTO Admin VALUES (101, 'Smith','00000001','P@ssWord');
+INSERT INTO Admin VALUES (101, 'Smith','test1@gmail.com');
 INSERT INTO Admin VALUES (102, 'James','00000002','P@ssWord');
 INSERT INTO Admin VALUES (103, 'John','00000003','P@ssWord');
 INSERT INTO Admin VALUES (104, 'Mary','00000004','P@ssWord');
@@ -6,7 +6,7 @@ INSERT INTO Admin VALUES (105, 'Linda','00000005','P@ssWord');
 INSERT INTO Admin VALUES (106, 'Sarah','00000006','P@ssWord');
 INSERT INTO Admin VALUES (107, 'Nancy','00000007','P@ssWord');
 
-INSERT INTO Account VALUES ('00000001','P@ssWord');
+INSERT INTO Account VALUES ('test1@gmail.com','P@ssWord1');
 INSERT INTO Account VALUES ('00000002','P@ssWord');
 INSERT INTO Account VALUES ('00000003','P@ssWord');
 INSERT INTO Account VALUES ('00000004','P@ssWord');
@@ -14,7 +14,7 @@ INSERT INTO Account VALUES ('00000005','P@ssWord');
 INSERT INTO Account VALUES ('00000006','P@ssWord');
 INSERT INTO Account VALUES ('00000007','P@ssWord');
 -- TODO: update semster ID, advisorID if necessary
-INSERT INTO Students VALUES (100001, 'Joseph','10000001','P@ssWord',3.45, "2021", 201);
+INSERT INTO Students VALUES (100001, 'Joseph','test1@gmail.com','P@ssWord',3.45, "Fall 2021", 201);
 INSERT INTO Students VALUES (100002, 'Thomas','10000002','P@ssWord',3.10,"2021", 201);
 INSERT INTO Students VALUES (100003, 'Charles','10000003','P@ssWord', 3.30,"2021", 202);
 INSERT INTO Students VALUES (100004, 'Jessica','10000004','P@ssWord', 3.90,"2021", 202);
