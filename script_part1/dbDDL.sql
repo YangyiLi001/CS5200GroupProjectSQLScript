@@ -47,6 +47,51 @@ CREATE TABLE InstructorCourse  (
       FOREIGN KEY(CourseID) REFERENCES Course(CourseID)
 )
 
+-- Vaishali's Part
+Create table Advisor (
+AdvisorID VARCHAR(50) NOT NULL PRIMARY KEY,
+UserID VARCHAR(50),
+Password VARCHAR(50), # password should also be a foreign key ??
+Name VARCHAR(50),
+DepartmentID VARCHAR(50),
+FOREIGN KEY(UserID) REFERENCES Account(UserID),
+FOREIGN KEY(AdvisorID) REFERENCES Department(DepartmentID)
+);
+
+Create table Classroom (
+ClassroomID VARCHAR(50) NOT NULL PRIMARY KEY, 
+Location VARCHAR(50),
+Capacity int);
+
+Create table StudentCourse (
+StudentID VARCHAR(50),
+CourseID int(4),
+Waitlist BOOL,
+FOREIGN KEY(InstructorID) REFERENCES Instructor(InstructorID),
+FOREIGN KEY(CourseID) REFERENCES Course(CourseID)
+);
+
+Create table Course (
+CourseID int(4) NOT NULL PRIMARY KEY, 
+Name VARCHAR(50),
+ModeFlag VARCHAR(5),  # need to check its type
+Capacity int,
+Credits int,
+PrerequisiteCourseID int(4), # password should also be a foreign key ??
+SemesterID VARCHAR(50),
+DepartmentID VARCHAR(50),
+FOREIGN KEY(SemesterID) REFERENCES Semester(SemesterID),
+FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID)
+);
+
+Create table DepartmentCourse (
+DepartmentID VARCHAR(50), 
+CourseID int(4),
+FOREIGN KEY(CourseID) REFERENCES Course(CourseID),
+FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
+CONSTRAINT DepartmentCourseID PRIMARY KEY (DepartmentID,CourseID));
+
+
 -- TODO: ADDING trigger
 -- Trigger
 -- update advisorID for student if an old advisor droped
