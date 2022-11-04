@@ -41,7 +41,7 @@ CREATE TABLE InstructorCourse  (
 
 Create table Advisor (
          Advisor_id int(8) NOT NULL,
-         Email_id VARCHAR(50),
+         Email_id VARCHAR(20),
          Name VARCHAR(50),
          Department_id int(8),
          PRIMARY KEY (Advisor_id)
