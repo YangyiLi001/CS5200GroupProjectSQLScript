@@ -1,13 +1,13 @@
 CREATE TABLE Admin  (
         Admin_id  int(8) NOT NULL,
         Name     VARCHAR(20),
-        Email_id    VARCHAR(70),
+        Email_id    VARCHAR(20),
         PRIMARY KEY  (Admin_iD)
 );
 
 
 CREATE TABLE Account  (
-        Email_id    VARCHAR(70) NOT NULL,
+        Email_id    VARCHAR(20) NOT NULL,
         Password   VARCHAR(20),
         PRIMARY KEY (Email_id)
 );
@@ -15,7 +15,7 @@ CREATE TABLE Account  (
 CREATE TABLE Students  (
         Student_id int(8) NOT NULL,
         Name     VARCHAR(20) NOT NULL,
-        Email_id    VARCHAR(70) NOT NULL,
+        Email_id    VARCHAR(20) NOT NULL,
         CGPA     DECIMAL(6,3),
         Semester_name VARCHAR(20),
         Advisor_id int(8),
@@ -26,7 +26,7 @@ CREATE TABLE Students  (
 CREATE TABLE Instructors  (
         Instructor_id int(8),
         Name     VARCHAR(20),
-        Email_id    VARCHAR(70),
+        Email_id    VARCHAR(20),
         Department_id int(8),
         PRIMARY KEY (Instructor_id)
 );
@@ -41,7 +41,7 @@ CREATE TABLE InstructorCourse  (
 
 Create table Advisor (
          Advisor_id int(8) NOT NULL,
-         Email_id VARCHAR(70),
+         Email_id VARCHAR(50),
          Name VARCHAR(50),
          Department_id int(8),
          PRIMARY KEY (Advisor_id)
@@ -70,7 +70,6 @@ Create table Course (
         Capacity int(8),
         Credits int(2),
         Prerequisite_course_id int(8),
-        Semester_name VARCHAR(20),
         Department_id int(8),
         PRIMARY KEY (Course_id)
 );
@@ -91,7 +90,6 @@ CREATE TABLE Department(
 
 CREATE TABLE Semester(
          Semester_name VARCHAR(20),
-         Course_id       INT(8),
          Start_date date,
          End_date date,
          PRIMARY KEY (Semester_name)
@@ -143,13 +141,11 @@ ALTER TABLE Advisor ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id);
 ALTER TABLE Advisor ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
 ALTER TABLE StudentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE StudentCourse ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id);
-ALTER TABLE Course ADD FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name);
 ALTER TABLE Course ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
 ALTER TABLE Course ADD FOREIGN KEY(Prerequisite_course_id) REFERENCES Course(Course_id);
 ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
 ALTER TABLE Department ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id);
-ALTER TABLE Semester ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE SemesterCourse ADD FOREIGN KEY(Course_id ) REFERENCES Course(Course_id);
 ALTER TABLE SemesterCourse ADD FOREIGN KEY(Semester_name ) REFERENCES Semester(Semester_name);
 ALTER TABLE Section ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
