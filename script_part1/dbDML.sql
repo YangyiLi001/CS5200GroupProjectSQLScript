@@ -29,13 +29,14 @@ INSERT INTO Students VALUES (100012, 'Mark','100000012','P@ssWord', 3.25,"2021",
 INSERT INTO Students VALUES (100013, 'Betty','10000013','P@ssWord',3.10,"2021", 208);
 INSERT INTO Students VALUES (100014, 'Margaret','10000014','P@ssWord', 3.80,"2021", 208);
 
-INSERT INTO Instructors VALUES (301, 'Lee','30000001','P@ssWord',501);
-INSERT INTO Instructors VALUES (302, 'Steven','30000002','P@ssWord',501);
-INSERT INTO Instructors VALUES (303, 'Paul','30000003','P@ssWord',501);
-INSERT INTO Instructors VALUES (304, 'Kimberly','30000004','P@ssWord',502);
-INSERT INTO Instructors VALUES (305, 'Emily','30000005','P@ssWord',502);
-INSERT INTO Instructors VALUES (306, 'Donna','30000006','P@ssWord',503);
-INSERT INTO Instructors VALUES (307, 'Carol','30000007','P@ssWord',503);
+
+INSERT INTO Instructors VALUES (301, 'Lee','instructor301@test.com','P@ssWord301',501);
+INSERT INTO Instructors VALUES (302, 'Steven','instructor302@test.com','P@ssWord302',501);
+INSERT INTO Instructors VALUES (303, 'Paul','instructor303@test.com','P@ssWord303',501);
+INSERT INTO Instructors VALUES (304, 'Kimberly','instructor304@test.com','P@ssWord304',502);
+INSERT INTO Instructors VALUES (305, 'Emily','instructor305@test.com','P@ssWord305',502);
+INSERT INTO Instructors VALUES (306, 'Donna','instructor306@test.com','P@ssWord306',503);
+INSERT INTO Instructors VALUES (307, 'Carol','instructor307@test.com','P@ssWord307',503);
 
 --Vaishali's Part
 
@@ -72,10 +73,10 @@ insert into DepartmentCourse values ('Dept2', 5003);
 insert into DepartmentCourse values ('Dept2', 5004);
 
 
-INSERT INTO InstructorCourse VALUES ('30000001',5001);
-INSERT INTO InstructorCourse VALUES ('30000002',5002);
-INSERT INTO InstructorCourse VALUES ('30000003',5003);
-INSERT INTO InstructorCourse VALUES ('30000004',5004);
-INSERT INTO InstructorCourse VALUES ('30000005',5005);
-INSERT INTO InstructorCourse VALUES ('30000006',5006);
-INSERT INTO InstructorCourse VALUES ('30000007',5007);
+INSERT INTO InstructorCourse VALUES ('301',5001);
+INSERT INTO InstructorCourse VALUES ('302',5002);
+INSERT INTO InstructorCourse VALUES ('303',5003);
+INSERT INTO InstructorCourse VALUES ('304',5004);
+INSERT INTO InstructorCourse VALUES ('305',5005);
+INSERT INTO InstructorCourse VALUES ('306',5006);
+INSERT INTO InstructorCourse VALUES ('307',5007);
