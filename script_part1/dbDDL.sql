@@ -92,6 +92,61 @@ FOREIGN KEY(DepartmentID) REFERENCES Department(DepartmentID),
 CONSTRAINT DepartmentCourseID PRIMARY KEY (DepartmentID,CourseID));
 
 
+CREATE TABLE department
+(department_id     INT(1),
+dname        VARCHAR(15),
+advisor_id      VARCHAR(9),
+PRIMARY KEY(department_id ),
+      FOREIGN KEY(advisor_id) REFERENCES Advisors(advisor_id)
+      )
+
+CREATE TABLE semester
+(semester_id      INT(4),
+course_id       INT(4),
+start_date date,
+end_date date
+PRIMARY KEY (department_id, course_id )
+)
+
+CREATE TABLE semesterCourse
+(
+Semester_id INT(4),
+Course_id INT(4)
+PRIMARY KEY (Semester_id, course_id )
+)
+
+
+CREATE TABLE section
+(
+section_id      INT(4),
+course_id       INT(4),
+PRIMARY KEY(section_id, course_id )
+)
+
+CREATE TABLE message
+(
+message_id      INT(4),
+read_flag      Boolean,
+advisor_id		VARCHAR(9),
+student_id 		int(6)
+PRIMARY KEY (message_id)
+FOREIGN KEY(advisor_id) REFERENCES Advisors(advisor_id)
+FOREIGN KEY(student_id) REFERENCES Students(student_id)
+)
+
+CREATE TABLE occupancy
+(
+course_id      INT(4),
+classroom_id     Boolean,
+Day_class	day,
+shift1		Boolean,
+shift2		Boolean,
+shift3		Boolean
+PRIMARY KEY (course_id, classroom_id)
+FOREIGN KEY(course_id) REFERENCES Course(course_id)
+FOREIGN KEY(classroom_id) REFERENCES Classroom(classroom_id)
+
+)
 -- TODO: ADDING trigger
 -- Trigger
 -- update advisorID for student if an old advisor droped
