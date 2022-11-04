@@ -7,7 +7,7 @@ CREATE TABLE Admin  (
 
 
 CREATE TABLE Account  (
-        Email_id    VARCHAR(20) NOT NULL,
+        Email_id    VARCHAR(70) NOT NULL,
         Password   VARCHAR(20),
         PRIMARY KEY (Email_id)
 );
