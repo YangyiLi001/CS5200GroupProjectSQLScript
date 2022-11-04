@@ -211,3 +211,11 @@ INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5005);
 INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5006);
 INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5007);
 INSERT INTO SemesterCourse (Semester_name,Course_id) VALUES ('Fall 2022', 5008);
+                                                                                           
+INSERT INTO Message (Message_id, Message_body, Read_flag, Advisor_id, Student_id) VALUES (0101, 'Approved', 0, 501, 1001);
+INSERT INTO Message (Message_id, Message_body, Read_flag, Advisor_id, Student_id) VALUES (0102, 'Declined', 1, 502, 1002);
+INSERT INTO Message (Message_id, Message_body, Read_flag, Advisor_id, Student_id) VALUES (0103, 'Congratulations', 1, 503, 1003);
+INSERT INTO Message (Message_id, Message_body, Read_flag, Advisor_id, Student_id) VALUES (0104, 'Approved', 0, 501, 1004);                                                                                           
+INSERT INTO Message (Message_id, Message_body, Read_flag, Advisor_id, Student_id) VALUES (0105, 'Approved', 1, 502, 1005);                                                                                           
+INSERT INTO Message (Message_id, Message_body, Read_flag, Advisor_id, Student_id) VALUES (0106, 'Declined', 0, 503, 1006);
+INSERT INTO Message (Message_id, Message_body, Read_flag, Advisor_id, Student_id) VALUES (0107, 'Approved', 0, 504, 1007);                                                                                           
