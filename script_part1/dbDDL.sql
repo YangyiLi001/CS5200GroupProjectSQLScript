@@ -155,10 +155,25 @@ ALTER TABLE Message ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id);
 ALTER TABLE Occupancy ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE Occupancy ADD FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id);
 
-#Procedure
+-- Procedure
 DELIMITER $$ ;
 CREATE PROCEDURE countRegistration ( StudentID INT )
 BEGIN
 select COUNT(Course_id) from StudentCourse group by Student_id having Student_id = StudentID;
 END; $$
 DELIMITER ; $$
+
+-- Trigger
+-- If the course mode changed from on campuse to online mode by updating the online flag, the trigger will increase this course capacity.
+delimiter $$ ;
+create trigger update_online_capacity
+before update on course
+for each row
+begin
+    set new.capacity = old.capacity+30;
+end; $$
+delimiter ; $$
+-- example: run the following command to test trigger 
+-- select * from course;
+-- update course set online_flag=1 where course_id = 5002;
+-- select * from course;
