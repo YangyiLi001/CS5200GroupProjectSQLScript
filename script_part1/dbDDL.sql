@@ -152,3 +152,11 @@ ALTER TABLE Message ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id);
 ALTER TABLE Message ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id);
 ALTER TABLE Occupancy ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE Occupancy ADD FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id);
+
+#Procedure
+DELIMITER $$ ;
+CREATE PROCEDURE countRegistration ( StudentID INT )
+BEGIN
+select COUNT(Course_id) from StudentCourse group by Student_id having Student_id = StudentID;
+END; $$
+DELIMITER ; $$
