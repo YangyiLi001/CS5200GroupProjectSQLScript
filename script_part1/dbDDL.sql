@@ -1,3 +1,6 @@
+Create database db-gp1-2022;
+Use db-gp1-2022;
+
 CREATE TABLE Admin  (
         Admin_id  int(8) NOT NULL,
         Name     VARCHAR(20),
