@@ -145,7 +145,6 @@ ALTER TABLE Course ADD FOREIGN KEY(Department_id) REFERENCES Department(Departme
 ALTER TABLE Course ADD FOREIGN KEY(Prerequisite_course_id) REFERENCES Course(Course_id);
 ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
-ALTER TABLE Department ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id);
 ALTER TABLE SemesterCourse ADD FOREIGN KEY(Course_id ) REFERENCES Course(Course_id);
 ALTER TABLE SemesterCourse ADD FOREIGN KEY(Semester_name ) REFERENCES Semester(Semester_name);
 ALTER TABLE Section ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
