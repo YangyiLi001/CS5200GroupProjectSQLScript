@@ -46,10 +46,10 @@ insert into Classroom (Classroom_id, Location, Capacity) values ('1103', 'locati
 insert into Classroom (Classroom_id, Location, Capacity) values ('1104', 'location4', 60);
 insert into Classroom (Classroom_id, Location, Capacity) values ('1105', 'location5', 50);
 
-insert into Department values (501, 'Computer Science', null);
-insert into Department values (502, 'MIS', null);
-insert into Department values (503, 'Data Science', null);
-insert into Department values (504, 'Project Management', null);
+insert into Department values (501, 'Computer Science');
+insert into Department values (502, 'MIS');
+insert into Department values (503, 'Data Science');
+insert into Department values (504, 'Project Management');
 
 insert into Advisor values (201, 'advisor201@gmail.com', 'Anna', '501');
 insert into Advisor  values (202, 'advisor202@gmail.com', 'Chung', '501');
@@ -66,10 +66,6 @@ INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (3
 INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (306, 'Donna','instructor306@test.com', 503);
 INSERT INTO Instructors (Instructor_id, Name, Email_id, Department_id) VALUES (307, 'Carol','instructor307@test.com', 503);
 
-update Department set Advisor_id = 201 where Department_id = 501;
-update Department set Advisor_id = 202 where Department_id = 502;
-update Department set Advisor_id = 203 where Department_id = 503;
-update Department set Advisor_id = 204 where Department_id = 504;
 
 insert into Course values (5001, 'Algorithms', 1, 20, 4, null, 501);
 insert into Course values (5002, 'Java', 0, 20, 4, 5001, 501);
