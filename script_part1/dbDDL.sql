@@ -84,7 +84,6 @@ Create table DepartmentCourse (
 CREATE TABLE Department(
         Department_id     INT(8),
         Name        VARCHAR(20),
-        Advisor_id      INT(8),
         PRIMARY KEY(Department_id)
 );
 
