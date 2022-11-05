@@ -177,3 +177,13 @@ delimiter ; $$
 -- select * from course;
 -- update course set online_flag=1 where course_id = 5002;
 -- select * from course;
+
+--VIEW--
+--Create a view to view the students with CGPA > 3.8--
+CREATE VIEW TopGrades AS
+SELECT NAME, CGPA
+FROM Students
+WHERE CGPA > 3.8;
+
+SELECT * FROM TopGrades;
+
