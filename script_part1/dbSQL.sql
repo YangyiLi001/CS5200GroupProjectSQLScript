@@ -7,3 +7,17 @@ select a.student_id
 from (select student_id from StudentCourse where course_id = 5002) a inner join (select student_id from StudentCourse where course_id = 5001) b
 where a.student_id = b.student_id
 order by a.student_id desc;
+
+
+#SQL1
+#For each Semeter find the student with the highest CGPA
+select a.Student_id, a.Name, a.Semester_name, a.CGPA
+from 
+(select *, rank() over(partition by Semester_name order by CGPA desc, Student_id) as rnk
+from Students) a
+where a.rnk = 1
+order by a.Student_id;
+
+#SQl2
+#Find students who are taking more than 2 courses.
+Select Student_id from StudentCourse group By Student_id having Count(Course_id) >1;
