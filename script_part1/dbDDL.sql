@@ -156,6 +156,7 @@ ALTER TABLE Occupancy ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE Occupancy ADD FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id);
 
 -- Procedure
+-- Return the number of courses a student has registered for
 DELIMITER $$ ;
 CREATE PROCEDURE countRegistration ( StudentID INT )
 BEGIN
