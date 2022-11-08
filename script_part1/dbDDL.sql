@@ -163,6 +163,7 @@ BEGIN
 select COUNT(Course_id) from StudentCourse group by Student_id having Student_id = StudentID;
 END; $$
 DELIMITER ; $$
+call countRegistration(1001);
 
 -- Trigger
 -- If the course mode changed from on campuse to online mode by updating the online flag, the trigger will increase this course capacity.
