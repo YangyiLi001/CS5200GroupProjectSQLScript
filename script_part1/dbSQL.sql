@@ -17,7 +17,33 @@ from
 from Students) a
 where a.rnk = 1
 order by a.Student_id;
+-- Expected Result
+-- +------------+-----------+---------------+-------+
+-- | Student_id | Name      | Semester_name | CGPA  |
+-- +------------+-----------+---------------+-------+
+-- |       1004 | Jessica   | Fall 2022     | 3.900 |
+-- |       1007 | Elizabeth | Spring 2022   | 3.800 |
+-- |       1010 | Anthony   | Fall 2021     | 3.300 |
+-- +------------+-----------+---------------+-------+
 
 #SQl2
 #Find students who are taking more than 2 courses.
 Select Student_id from StudentCourse group By Student_id having Count(Course_id) >1;
+-- Expected Result
+-- +------------+
+-- | Student_id |
+-- +------------+
+-- |       1001 |
+-- |       1002 |
+-- |       1003 |
+-- |       1004 |
+-- |       1005 |
+-- |       1006 |
+-- |       1007 |
+-- |       1008 |
+-- |       1009 |
+-- |       1011 |
+-- |       1012 |
+-- |       1013 |
+-- |       1014 |
+-- +------------+
