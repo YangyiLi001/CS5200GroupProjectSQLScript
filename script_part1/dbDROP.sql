@@ -1,4 +1,4 @@
-Drop proceduew countRegistration;
+Drop procedure countRegistration;
 Drop trigger update_online_capacity;
 Drop view TopGrades;
 Drop table Admin;
