@@ -1,5 +1,5 @@
-Create database db-gp1-2022;
-Use db-gp1-2022;
+Create database dbgp12022;
+Use dbgp12022;
 
 CREATE TABLE Admin  (
         Admin_id  int(8) NOT NULL,
