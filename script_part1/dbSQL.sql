@@ -42,7 +42,7 @@ Select Student_id from StudentCourse group By Student_id having Count(Course_id)
 
 with cte
 as (select count(student_id), course_id from StudentCourse group by course_id having count(student_id)<5) 
-select b.Instructor_id from instructorCourse b, cte where cte.course_id=b.course_id;
+select b.Instructor_id from InstructorCourse b, cte where cte.course_id=b.course_id;
 
 -- +---------------+
 -- | Instructor_id |
