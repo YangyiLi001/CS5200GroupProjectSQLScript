@@ -47,3 +47,35 @@ Select Student_id from StudentCourse group By Student_id having Count(Course_id)
 -- |       1013 |
 -- |       1014 |
 -- +------------+
+
+#SQL3
+-- Find out all the instructosrs who teach classes with total students less than 5
+
+with cte
+as (select count(student_id), course_id from StudentCourse group by course_id having count(student_id)<5) 
+select b.Instructor_id from instructorCourse b, cte where cte.course_id=b.course_id;
+
+-- +---------------+
+-- | Instructor_id |
+-- +---------------+
+-- |           303 |
+-- |           304 |
+-- |           305 |
+-- |           306 |
+-- |           307 |
+-- +---------------+
+
+#SQL4
+-- Find out all the student id for students who has take course 5002 and 5001 in desc order.
+select a.student_id
+from (select student_id from StudentCourse where course_id = 5002) a inner join (select student_id from StudentCourse where course_id = 5001) b
+where a.student_id = b.student_id
+order by a.student_id desc;
+
+-- +------------+
+-- | student_id |
+-- +------------+
+-- |       1004 |
+-- |       1002 |
+-- |       1001 |
+-- +------------+
