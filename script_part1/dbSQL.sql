@@ -87,7 +87,7 @@ FROM InstructorCourseCounts;
 
 # SQL6 
 
---- Lists the courses in order of most enrollments to least enrollments
+-- Lists the courses in order of most enrollments to least enrollments
 
 SELECT 
     Course.Course_id,
