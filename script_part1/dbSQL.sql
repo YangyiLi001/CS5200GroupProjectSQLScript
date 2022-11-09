@@ -68,3 +68,49 @@ order by a.student_id desc;
 -- |       1002 |
 -- |       1001 |
 -- +------------+
+
+#SQL5
+-- List the average number of courses taught by the instructor.
+WITH InstructorCourseCounts AS (
+SELECT I.Instructor_id, I.Name , COUNT(C.Course_id)
+AS InstructorCourseCount
+FROM Instructors I
+LEFT JOIN InstructorCourse C ON I.Instructor_id = C.Instructor_id
+GROUP BY I.Instructor_id)
+SELECT AVG(InstructorCourseCount)
+FROM InstructorCourseCounts;
++----------------------------+
+| AVG(InstructorCourseCount) |
++----------------------------+
+|                     1.0000 |
++----------------------------+
+
+# SQL6 
+
+--- Lists the courses in order of most enrollments to least enrollments
+
+SELECT 
+    Course.Course_id,
+    Course.Name,
+    COUNT(StudentCourse.Student_id) AS StudentCount
+FROM
+    Course
+        LEFT JOIN
+    StudentCourse ON Course.Course_id = StudentCourse.Course_id
+GROUP BY Course.Course_id , Course.Name
+ORDER BY StudentCount DESC;
+
++-----------+------------+--------------+
+| Course_id | Name       | StudentCount |
++-----------+------------+--------------+
+|      5001 | Algorithms |            9 |
+|      5002 | Java       |            5 |
+|      5004 | Cloud      |            4 |
+|      5005 | Python     |            4 |
+|      5003 | DBMS       |            2 |
+|      5006 | Software   |            2 |
+|      5007 | AI         |            1 |
++-----------+------------+--------------+
+
+
+
