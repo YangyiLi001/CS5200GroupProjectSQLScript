@@ -12,6 +12,7 @@ CREATE TABLE Admin  (
 CREATE TABLE Account  (
         Email_id    VARCHAR(70) NOT NULL,
         Password   VARCHAR(20),
+        User_type ENUM('ADMIN','INSTRUCTOR','STUDENT','ADVISOR'),
         PRIMARY KEY (Email_id)
 );
 
