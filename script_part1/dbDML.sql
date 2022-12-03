@@ -150,10 +150,7 @@ INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('
 INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('306',5006,'Fall 2022');
 INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('307',5007,'Fall 2021');
 INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('307',5007,'Spring 2022');
-INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('3017',5007,'Fall 2022');
-INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('301',5001,'Fall 2021');
-INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('301',5001,'Spring 2022');
-INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('301',5001,'Fall 2022');
+INSERT INTO InstructorCourse (Instructor_id, Course_id, Semester_name) VALUES ('307',5007,'Fall 2022');
 
 
 INSERT INTO Occupancy(Course_id, Classroom_id, Day_week, Shift) VALUES (5001, 1101, 'Monday','Morning');
