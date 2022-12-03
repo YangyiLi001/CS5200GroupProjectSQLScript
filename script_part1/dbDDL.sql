@@ -1,5 +1,5 @@
-Create database dbgp12022;
-Use dbgp12022;
+Create database KhouryReg;
+Use KhouryReg;
 
 CREATE TABLE Admin  (
         Admin_id  int(8) NOT NULL,
@@ -7,7 +7,6 @@ CREATE TABLE Admin  (
         Email_id    VARCHAR(70),
         PRIMARY KEY  (Admin_iD)
 );
-
 
 CREATE TABLE Account  (
         Email_id    VARCHAR(70) NOT NULL,
@@ -26,7 +25,6 @@ CREATE TABLE Students  (
         PRIMARY KEY (Student_id)
 );
 
-
 CREATE TABLE Instructors  (
         Instructor_id int(8),
         Name     VARCHAR(20),
@@ -39,7 +37,8 @@ CREATE TABLE Instructors  (
 CREATE TABLE InstructorCourse  (
         Instructor_id     int(8) NOT NULL,
         Course_id     int(8) NOT NULL,
-        CONSTRAINT IC_id PRIMARY KEY(Instructor_id, Course_id)
+        Semester_name VARCHAR(20) NOT NULL,
+        CONSTRAINT IC_id PRIMARY KEY(Instructor_id, Course_id, Semester_name)
 );
 
 
@@ -50,8 +49,6 @@ Create table Advisor (
          Department_id int(8),
          PRIMARY KEY (Advisor_id)
 );
-
-
 
 Create table Classroom (
         Classroom_id int(8) NOT NULL ,
@@ -98,19 +95,6 @@ CREATE TABLE Semester(
          PRIMARY KEY (Semester_name)
 );
 
-CREATE TABLE SemesterCourse(
-        Semester_name VARCHAR(20),
-        Course_id int(8),
-        CONSTRAINT SC_id PRIMARY KEY (Semester_name, Course_id)
-);
-
-
-CREATE TABLE Section(
-        Section_id      int(8),
-        Course_id       int(8),
-        CONSTRAINT Section_pk PRIMARY KEY(Section_id, Course_id)
-);
-
 CREATE TABLE Message(
         Message_id  int(8),
         Message_body VARCHAR(100),
@@ -124,12 +108,9 @@ CREATE TABLE Occupancy(
         Course_id     int(8),
         Classroom_id  int(8),
         Day_week  ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
-        Shift1    BIT(1),
-        Shift2    BIT(1),
-        Shift3    BIT(1),
+        Shift ENUM('Morning','Afternoon','Evening'),
         CONSTRAINT OC_pk PRIMARY KEY (Course_id, Classroom_id)
 );
-
 
 
 ALTER TABLE Admin ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id);
@@ -140,6 +121,7 @@ ALTER TABLE Instructors ADD FOREIGN KEY(Department_id) REFERENCES Department(Dep
 ALTER TABLE Instructors ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id);
 ALTER TABLE InstructorCourse ADD FOREIGN KEY(Instructor_id) REFERENCES Instructors(Instructor_id);
 ALTER TABLE InstructorCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
+ALTER TABLE InstructorCourse ADD FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name);
 ALTER TABLE Advisor ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id);
 ALTER TABLE Advisor ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
 ALTER TABLE StudentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
@@ -148,13 +130,9 @@ ALTER TABLE Course ADD FOREIGN KEY(Department_id) REFERENCES Department(Departme
 ALTER TABLE Course ADD FOREIGN KEY(Prerequisite_course_id) REFERENCES Course(Course_id);
 ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
-ALTER TABLE SemesterCourse ADD FOREIGN KEY(Course_id ) REFERENCES Course(Course_id);
-ALTER TABLE SemesterCourse ADD FOREIGN KEY(Semester_name ) REFERENCES Semester(Semester_name);
-ALTER TABLE Section ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE Message ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id);
 ALTER TABLE Message ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id);
 ALTER TABLE Occupancy ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
 ALTER TABLE Occupancy ADD FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id);
-
 
 
