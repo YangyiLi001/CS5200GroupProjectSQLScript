@@ -11,4 +11,4 @@ Drop table StudentCourse;
 Drop table Students;
 Drop table Classroom;
 Drop table Advisor, Department, Account,Instructors,InstructorCourse,Semester, Course;
-Drop database dbgp12022;
+Drop database KhouryReg;
