@@ -1,6 +1,9 @@
 Create database KhouryReg;
 Use KhouryReg;
 
+
+Use KhouryReg2;
+
 CREATE TABLE Admin  (
         Admin_id  int(8) NOT NULL,
         Name     VARCHAR(20),
@@ -113,26 +116,26 @@ CREATE TABLE Occupancy(
 );
 
 
-ALTER TABLE Admin ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id);
-ALTER TABLE Students ADD FOREIGN KEY(Email_id ) REFERENCES Account(Email_id);
-ALTER TABLE Students ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id);
-ALTER TABLE Students ADD FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name);
-ALTER TABLE Instructors ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
-ALTER TABLE Instructors ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id);
-ALTER TABLE InstructorCourse ADD FOREIGN KEY(Instructor_id) REFERENCES Instructors(Instructor_id);
-ALTER TABLE InstructorCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
-ALTER TABLE InstructorCourse ADD FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name);
-ALTER TABLE Advisor ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id);
-ALTER TABLE Advisor ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
-ALTER TABLE StudentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
-ALTER TABLE StudentCourse ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id);
-ALTER TABLE Course ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
-ALTER TABLE Course ADD FOREIGN KEY(Prerequisite_course_id) REFERENCES Course(Course_id);
-ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
-ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id);
-ALTER TABLE Message ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id);
-ALTER TABLE Message ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id);
-ALTER TABLE Occupancy ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id);
-ALTER TABLE Occupancy ADD FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id);
+ALTER TABLE Admin ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id) on delete cascade;
+ALTER TABLE Students ADD FOREIGN KEY(Email_id ) REFERENCES Account(Email_id) on delete cascade;
+ALTER TABLE Students ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id) on delete cascade;
+ALTER TABLE Students ADD FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name) on delete cascade;
+ALTER TABLE Instructors ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id) on delete cascade;
+ALTER TABLE Instructors ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id) on delete cascade;
+ALTER TABLE InstructorCourse ADD FOREIGN KEY(Instructor_id) REFERENCES Instructors(Instructor_id) on delete cascade;
+ALTER TABLE InstructorCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id) on delete cascade;
+ALTER TABLE InstructorCourse ADD FOREIGN KEY(Semester_name) REFERENCES Semester(Semester_name) on delete cascade;
+ALTER TABLE Advisor ADD FOREIGN KEY(Email_id) REFERENCES Account(Email_id) on delete cascade;
+ALTER TABLE Advisor ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id) on delete cascade;
+ALTER TABLE StudentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id) on delete cascade;
+ALTER TABLE StudentCourse ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id) on delete cascade;
+ALTER TABLE Course ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id) on delete cascade;
+ALTER TABLE Course ADD FOREIGN KEY(Prerequisite_course_id) REFERENCES Course(Course_id) on delete cascade;
+ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id) on delete cascade;
+ALTER TABLE DepartmentCourse ADD FOREIGN KEY(Department_id) REFERENCES Department(Department_id) on delete cascade;
+ALTER TABLE Message ADD FOREIGN KEY(Advisor_id) REFERENCES Advisor(Advisor_id) on delete cascade;
+ALTER TABLE Message ADD FOREIGN KEY(Student_id) REFERENCES Students(Student_id) on delete cascade;
+ALTER TABLE Occupancy ADD FOREIGN KEY(Course_id) REFERENCES Course(Course_id) on delete cascade;
+ALTER TABLE Occupancy ADD FOREIGN KEY(Classroom_id) REFERENCES Classroom(Classroom_id) on delete cascade;
 
 
