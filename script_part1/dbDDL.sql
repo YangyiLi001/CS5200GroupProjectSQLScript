@@ -1,9 +1,6 @@
 Create database KhouryReg;
 Use KhouryReg;
 
-
-Use KhouryReg2;
-
 CREATE TABLE Admin  (
         Admin_id  int(8) NOT NULL,
         Name     VARCHAR(20),
