@@ -1,14 +1,4 @@
 Drop procedure countRegistration;
 Drop trigger update_online_capacity;
 Drop view TopGrades;
-Drop table Admin;
-Drop table DepartmentCourse;
-Drop table Message;
-Drop table Occupancy;
-Drop table Section;
-Drop table SemesterCourse;
-Drop table StudentCourse;
-Drop table Students;
-Drop table Classroom;
-Drop table Advisor, Department, Account,Instructors,InstructorCourse,Semester, Course;
 Drop database KhouryReg;
